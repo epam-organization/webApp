@@ -4,17 +4,17 @@
 name: Build and deploy ASP app to Azure Web App - az4r3
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+    push:
+      branches:
+        - webServices
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup MSBuild path
         uses: microsoft/setup-msbuild@v1.0.2
@@ -34,24 +34,3 @@ jobs:
           name: ASP-app
           path: '/published/**'
 
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: ASP-app
-
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'az4r3'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_43BD222D002849BAB5BD67CB3117D8B6 }}
-          package: .
