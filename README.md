@@ -27,3 +27,5 @@ Sehen Sie sich andere Kurse des Autors auf [LinkedIn Learning](https://www.linke
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]: https://www.linkedin.com/learning/asp-dot-net-core-web-apps-nach-azure-migrieren
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/C4D0DAQGlmOj2WLBpIQ/learning-public-crop_675_1200/0/1680083909400?e=2147483647&v=beta&t=Btp-x9o1OvCX1k8Ms0Jj-NTZb1Dl5_8WiofSCcLKCdI
+
+## New Pull Request
