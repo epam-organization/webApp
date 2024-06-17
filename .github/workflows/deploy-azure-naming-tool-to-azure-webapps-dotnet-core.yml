@@ -30,7 +30,8 @@ on:
   
 defaults:
   run:
-    working-directory: src
+    #working-directory: src
+    working-directory: InitialApp/
     
 permissions:
   contents: read
