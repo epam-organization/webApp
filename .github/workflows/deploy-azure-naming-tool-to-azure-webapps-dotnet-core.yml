@@ -41,7 +41,8 @@ jobs:
       runs-on: ubuntu-latest
       defaults:
         run:
-          working-directory: src    
+          #working-directory: src
+          working-directory: InitialApp/
       outputs:
         secrets-valid: ${{ steps.secrets-valid.outputs.isvalid }}
       steps:
